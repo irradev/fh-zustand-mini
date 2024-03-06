@@ -13,3 +13,4 @@ Este es un cascarón de proyecto, siéntete libre de usarlo para tus proyectos.
 3. Correr en desarrollo ```npm run dev```
 
 # fh-zustand-mini
+# fh-zustand-mini
