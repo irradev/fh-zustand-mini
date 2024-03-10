@@ -1,7 +1,6 @@
 import { StateStorage, createJSONStorage } from 'zustand/middleware';
 
-const firebaseUrl =
-  'https://fh-zustand-storage-default-rtdb.firebaseio.com/zustand';
+const firebaseUrl = 'YOUR_FIREBASE_DATABASE_URL';
 
 const storageApi: StateStorage = {
   getItem: async function (name: string): Promise<string | null> {

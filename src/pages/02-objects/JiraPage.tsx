@@ -1,6 +1,8 @@
 import { JiraTasks } from '../../components';
 
 export const JiraPage = () => {
+
+
   return (
     <>
       <h1>Tareas</h1>
@@ -9,11 +11,11 @@ export const JiraPage = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           
-          <JiraTasks title='Pendientes' value='pending' />
+          <JiraTasks title='Abiertas' status='open' />
           
-          <JiraTasks title='Avanzando' value='in-progress' />
+          <JiraTasks title='En progreso' status='in-progress' />
           
-          <JiraTasks title='Terminadas' value='done' />
+          <JiraTasks title='Terminadas' status='done' />
 
       </div>
 
