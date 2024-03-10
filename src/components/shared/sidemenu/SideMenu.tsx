@@ -111,7 +111,7 @@ export const SideMenu = () => {
 
         {/* Logout */}
         <a
-          className="mt-10"
+          className="mt-10 cursor-pointer"
           onClick={logoutUser}
         >
           <div>
