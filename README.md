@@ -12,6 +12,21 @@ Este es un cascarón de proyecto, siéntete libre de usarlo para tus proyectos.
 
 ### Sección Login
 
-Para poder probar la sección del login es necesario tener instalado docker y ejecutar el siguietne comando para descargar la imagen del backend;
+Para poder probar la sección del login en local es necesario tener instalado docker y ejecutar el siguietne comando para descargar la imagen del backend;
 
 `docker compose up -d`
+
+#### Credenciales de acceso
+
+```
+email: test1@google.com
+password: Abc123
+
+email: test2@google.com
+password: Abc123
+
+```
+
+#### Imagen Docker Backend de prueba
+
+https://hub.docker.com/r/klerith/teslo-shop-cors
