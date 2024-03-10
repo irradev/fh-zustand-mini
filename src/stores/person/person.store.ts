@@ -3,6 +3,7 @@ import { devtools, persist } from 'zustand/middleware';
 // import { firebaseStorage } from '../storages/firebase.storage';
 // import { logger } from '../middlewares/logger.middleware';
 import { customSessionStorage } from '../storages/session.storage';
+import { useWeddingBoundStore } from '../wedding';
 
 interface PersonState {
   firstName: string;
@@ -29,12 +30,23 @@ const pesonStore: StateCreator<
 
 export const usePersonStore = create<PersonState & Actions>()(
   // logger(
-    devtools(
-      persist(pesonStore, {
-        name: 'person-storage',
-        // storage: firebaseStorage,
-        storage: customSessionStorage,
-      })
-    )
+  devtools(
+    persist(pesonStore, {
+      name: 'person-storage',
+      // storage: firebaseStorage,
+      storage: customSessionStorage,
+    })
+  )
   // )
 );
+
+// Acutalizar otro store
+// * Solo tener cuidado de no hacer dependencias cíclicas
+usePersonStore.subscribe((nexState /*prevState*/) => {
+  // console.log({ nexState, prevState });
+
+  const { firstName, lastName } = nexState;
+
+  useWeddingBoundStore.getState().setFirstName(firstName);
+  useWeddingBoundStore.getState().setLastName(lastName);
+});
